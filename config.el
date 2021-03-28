@@ -8,12 +8,15 @@
 (setq user-full-name "jacob louis hoover"
       user-mail-address "postylem@gmail.com")
 
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
+
+
 ;; Change initial default window size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 100) (height . 60)))
 (setq load-prefer-newer t)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
-;;
+;
 ;; + `doom-font'
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
@@ -22,7 +25,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string.
 (setq doom-font (font-spec :family "Fira Code" :size 14)
-      doom-variable-pitch-font (font-spec :family "Vollkorn" :size 16))
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14))
 (after! doom-theme
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -30,6 +33,14 @@
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
+
+;; neotree font changes
+;(custom-set-faces!
+; (set-face-attribute 'neo-button-face      nil :height 120)
+; (set-face-attribute 'neo-file-link-face   nil :height 120)
+; (set-face-attribute 'neo-dir-link-face    nil :height 120)
+; (set-face-attribute 'neo-header-face      nil :height 120)
+; (set-face-attribute 'neo-expand-btn-face  nil :height 120))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -73,7 +84,8 @@
 (setq TeX-parse-self t)
 
 (setq TeX-PDF-mode t)
-
+;; Stop annoying sub and superscripts
+(setq font-latex-fontify-script nil)
 
 ;; AucTeX http://www.stefanom.org/setting-up-a-nice-auctex-environment-on-mac-os-x/
 (setq TeX-auto-save t)
